@@ -1,15 +1,15 @@
 from fastapi import APIRouter
 import os
 router = APIRouter(
-    prefix="/createfile",
+    prefix="/create_file",
 )
 
 
-@router.get("/generate_password")
+@router.get("/user_file")
 async def generate_password(filename, text):
     if not os.Path.Exists(filename):
         with open(filename, 'w', encoding='utf-8') as file:
-            file.Write('Файл создан\n')
+            file.Write(f'{text}\n')
             print(f'Файл {filename} создан')
     else:
         print(f'Файл {filename} уже существует')
