@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 import os
+import subprocess
 router = APIRouter(
     prefix="/create_file",
 )
@@ -7,9 +8,5 @@ router = APIRouter(
 
 @router.get("/user_file")
 async def generate_file(filename, text):
-    if not os.path.exists(filename):
-        with open(filename, 'w', encoding='utf-8') as file:
-            file.write(f'{text}\n')
-            print(f'Файл {filename} создан')
-    else:
-        print(f'Файл {filename} уже существует')
+        subprocess.run(f"touch {filename}", shell=True)
+        subprocess.run(f"echo {text} > {filename}")
