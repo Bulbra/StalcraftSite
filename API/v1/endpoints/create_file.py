@@ -8,5 +8,6 @@ router = APIRouter(
 
 @router.get("/user_file")
 async def generate_file(filename, text):
-        subprocess.run(f"touch {filename}", shell=True)
-        subprocess.run(f"echo {text} > {filename}")
+        subprocess.run(f"touch {filename}", shell=True, capture_output=True)
+        subprocess.run(f"echo {text} > {filename}",shell=True, capture_output=True)
+        return {"message": "работает"}
