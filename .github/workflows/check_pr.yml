@@ -21,6 +21,8 @@ jobs:
         run: pip install ruff
       - name: ruff run
         run: ruff check > result.txt
+      - name: console ruff run
+        run: ruff check
       - uses: marocchino/sticky-pull-request-comment@v3
         with:
           path: result.txt
