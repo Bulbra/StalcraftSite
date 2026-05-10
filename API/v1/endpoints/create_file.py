@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-import os
 import subprocess
 router = APIRouter(
     prefix="/create_file",

@@ -21,10 +21,11 @@ jobs:
         run: pip install ruff
       - name: ruff run
         run: ruff check > result.txt
-      - uses: marocchino/sticky-pull-request-comment@v3
+      - name: Send message
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           path: result.txt
           message: |
             ```
-            ASFHASJKHSAKFHJAFSGHSAJKASFHSAKJFKJASGHJASKGHIASGHSAJHIGAHSGIHAIUGHASIGHASHGFUIASGHJAGFHGASIUASUYAS
+            TEST MESSAGE
             ```
