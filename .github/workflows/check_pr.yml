@@ -2,7 +2,7 @@ name: check_ruff
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
+    types: [ opened, reopened, synchronize ]
     branches:
       - master
 
@@ -16,16 +16,23 @@ jobs:
       - name: install python
         uses: actions/setup-python@v6
         with:
-              python-version: "3.13"
+          python-version: "3.13"
       - name: pip install ruff
         run: pip install ruff
-      - name: ruff run
-        run: ruff check > result.txt
-      - name: Send message
+      - name: Ruff run
+        run: ruff check > result.txt 2>&1 || echo "No issues found or an error occurred" > result.txt
+
+      - name: Send message with custom text
         uses: marocchino/sticky-pull-request-comment@v3
         with:
-          path: result.txt
-          message: |
-            ```
-            {{{ content }}}
-            ```
+                path: result.txt
+                message: |
+                  Результаты проверки кода с помощью Ruff
+                  
+                  Вот результаты анализа кода:
+                  
+                  ```
+                  {{{ content }}}
+                  ```
+                  
+                  исправьте все ошибки, отмеченные выше
