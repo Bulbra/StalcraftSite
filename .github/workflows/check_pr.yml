@@ -26,5 +26,5 @@ jobs:
           path: result.txt
           message: |
             ```
-            ASFHASJKHSAKFHJAFSGHSAJKASFHSAKJFKJASGHJASKGHIASGHSAJHIGAHSGIHAIUGHASIGHASHGFUIASGHJAGFHGASIUASUYAS
+            TEST MESSAGE
             ```
