@@ -36,3 +36,4 @@ jobs:
                   ```
                   
                   исправьте все ошибки, отмеченные выше
+                repo-token: ${{ secrets.PAT_TOKEN }}
