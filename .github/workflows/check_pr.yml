@@ -28,14 +28,4 @@ jobs:
       - name: Send message with custom text
         uses: marocchino/sticky-pull-request-comment@v3
         with:
-                path: result.txt
-                message: |
-                  Результаты проверки кода с помощью Ruff
-                  
-                  Вот результаты анализа кода:
-                  
-                  ```
-                  {{{content}}}
-                  ```
-                  
-                  исправьте все ошибки, отмеченные выше
+          message: ТЕСТ
