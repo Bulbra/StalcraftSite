@@ -28,4 +28,4 @@ jobs:
       - name: Send message with custom text
         uses: marocchino/sticky-pull-request-comment@v3
         with:
-          message: ТЕСТ
+          message: ТЕСТ2
