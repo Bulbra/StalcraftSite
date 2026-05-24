@@ -1,0 +1,20 @@
+name: pr
+
+on:
+  pull_request:
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check repo
+        uses: actions/checkout@v4
+      - name: install python
+        uses: actions/setup-python@v6
+        with:
+              python-version: "3.13"
+      - name: pip install ruff
+        run: pip install ruff
+      - name: Ruff run
+        run: ruff check
+

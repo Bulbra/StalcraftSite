@@ -1,0 +1,15 @@
+
+ name: Trigger issues
+ on:
+   issues:
+     types:
+       - opened
+
+ jobs:
+   monitor-issues:
+     name: Issues Notification
+     runs-on: ubuntu-latest
+     steps:
+       - name: Log Issues Details
+         run: |
+           echo "Дождитесь ответа @Bulbra"
