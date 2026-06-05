@@ -11,8 +11,6 @@ Path("logs").mkdir(exist_ok=True)
 
 logger = logging.getLogger("MinuteLogger")
 logger.setLevel(logging.DEBUG)
-logger.handlers.clear()
-
 
 handler = TimedRotatingFileHandler(
     filename=log_path,
@@ -21,12 +19,6 @@ handler = TimedRotatingFileHandler(
     backupCount=0,
     encoding='utf-8'
 )
-
-
-handler.suffix = "%Y-%m-%d_%H-%M"
-
-handler.extMatch = r"\d{4}-\d{2}-\d{2}_\d{2}-\d{2}"
-
 
 formatter = logging.Formatter(
     '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
